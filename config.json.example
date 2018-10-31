@@ -7,5 +7,6 @@
 	"fullchain": "fullchain.pem",
 	"authkey": "CHANGE_THIS",
 	"useHTTPS": false,
-	"proxyUseHTTPS": false
+	"proxyUseHTTPS": false,
+	"bindto": "127.0.0.1"
 }

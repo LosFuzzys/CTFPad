@@ -516,8 +516,8 @@ wss.on 'connection', (sock) ->
             s.send JSON.stringify {type: 'ctfmodification'}
       else console.log msg
 
-server.listen config.port
-proxyServer.listen config.etherpad_port
+server.listen config.port config.bindto
+proxyServer.listen config.etherpad_port config.bindto
 console.log "listening on port #{config.port} and #{config.etherpad_port}"
 
 filetype = (path,cb = ->) ->
