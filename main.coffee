@@ -207,9 +207,9 @@ githubApiAccess = (resource, acces_token, cb) ->
   acces_token = escape acces_token
   unless resource[0] == '/'
     resource = "/#{resource}"
-  url = "https://api.github.com#{resource}?access_token=#{acces_token}"
+  url = "https://api.github.com#{resource}"
   #console.log "performing github api request to #{url}"
-  headers = {'User-Agent': 'request', 'Accept': 'application/json'}
+  headers = {'User-Agent': 'request', 'Accept': 'application/json', 'Authorization': "token #{acces_token}"}
   request.get url, headers: headers, (err, eresp, body) ->
     #console.log "result: #{eresp.statusCode} - #{body}"
     if not err and eresp.statusCode == 200
